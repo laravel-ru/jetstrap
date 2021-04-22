@@ -1,89 +1,86 @@
 # Jetstrap
 
-[![Latest Stable Version](https://poser.pugx.org/nascent-africa/jetstrap/v)](//packagist.org/packages/nascent-africa/jetstrap)
-[![Total Downloads](https://poser.pugx.org/nascent-africa/jetstrap/downloads)](//packagist.org/packages/nascent-africa/jetstrap)
-[![License](https://poser.pugx.org/nascent-africa/jetstrap/license)](//packagist.org/packages/nascent-africa/jetstrap)
+[![Последняя стабильная версия](https://poser.pugx.org/nascent-africa/jetstrap/v)](//packagist.org/packages/nascent-africa/jetstrap)
+[![Всего скачиваний](https://poser.pugx.org/nascent-africa/jetstrap/downloads)](//packagist.org/packages/nascent-africa/jetstrap)
+[![Лицензия](https://poser.pugx.org/nascent-africa/jetstrap/license)](//packagist.org/packages/nascent-africa/jetstrap)
 
-  
-## Description
+## Описание
 
-Jetstrap is a lightweight laravel 8 package that focuses on the `VIEW` side of [Jetstream](https://github.com/laravel/jetstream) / [Breeze](https://github.com/laravel/breeze) package installed in your Laravel application, so when a swap is performed, the `Action`, `MODEL`, `CONTROLLER`, `Component` and `Action` classes of your project is still 100% handled by Laravel development team with no added layer of complexity.
+Jetstrap - это легкий пакет laravel 8, который фокусируется на `VIEW` стороне пакета [Jetstream](https://github.com/laravel/jetstream) / [Breeze](https://github.com/laravel/breeze), установленного в вашем приложении Laravel, так что, когда происходит обмен `Action`, `MODEL`, `CONTROLLER`, `Component` и `Action` классов вашего проекта по-прежнему на 100% обрабатывается командой разработчиков Laravel без дополнительного уровня сложности.
 
-## Table of Content
-  * [Installation](#installation)
-    + [Installing Jetstream](#installing-jetstream)
-      - [Install Jetstream With Livewire](#install-jetstream-with-livewire)
-      - [Or, Install Jetstream With Inertia](#or--install-jetstream-with-inertia)
-    + [Install Jetstrap](#install-jetstrap)
-    + [Finalizing The Installation](#finalizing-the-installation)
-    + [Extras](#extras)
-      - [Pagination](#pagination)
-  * [Presets](#presets)
-    + [Core Ui](#core-ui)
-    + [AdminLTE](#adminlte)
-  * [Breeze](#breeze)
-    + [Swapping Breeze resources](#swapping-breeze-resources)
-    + [Swapping Breeze inertia resources](#swapping-breeze-inertia-resources)
-  * [Testing](#testing)
-  * [License](#license)
-  
-  
-## Installation
+## Содержание
 
-### Installing Jetstream
+* [Установка](#установка)
+  + [Установка Jetstream](#установка-jetstream)
+    - [Установите Jetstream с помощью Livewire](#установите-jetstream-с-помощью-livewire)
+    - [Или установите Jetstream с помощью Inertia](#или-установите-jetstream-с-помощью-inertia)
+  + [Установите Jetstrap](#установите-jetstrap)
+  + [Завершение установки](#завершение-установки)
+  + [Дополнительно](#дополнительно)
+    - [Пагинация](#пагинация)
+* [Предустановки](#предустановки)
+  + [Core Ui](#core-ui)
+  + [AdminLTE](#adminlte)
+* [Breeze](#breeze)
+  + [Замена ресурсов Breeze](#замена-ресурсов-breeze)
+  + [Замена ресурсов Breeze inertia](#замена-ресурсов-breeze-inertia)
+* [Тестирование](#тестирование)
+* [Лицензия](#лицензия)
 
-You may use Composer to install Jetstream into your new Laravel project:
+## Установка
+
+### Установка Jetstream
+
+Вы можете использовать Composer для установки Jetstream в свой новый проект Laravel:
 
 ```
 composer require laravel/jetstream
 ```
 
-If you choose to install Jetstream through Composer, you should run the jetstream:install Artisan command. This command accepts the name of the stack you prefer (livewire or inertia). You are highly encouraged to read through the entire documentation of Livewire or Inertia before beginning your Jetstream project. In addition, you may use the --teams switch to enable team support:
+Если вы выбрали установку Jetstream через Composer, вам следует запустить Artisan-команду `jetstream:install`. Эта команда принимает имя стека, которое вы предпочитаете (livewire или inertia). Мы настоятельно рекомендуем вам прочитать всю документацию Livewire или Inertia перед тем, как начать свой проект Jetstream. Кроме того, вы можете использовать переключатель --teams, чтобы включить поддержку команды:
 
-#### Install Jetstream With Livewire
+#### Установите Jetstream с помощью Livewire
 
 ```
 php artisan jetstream:install livewire --teams
 ```
 
-#### Or, Install Jetstream With Inertia
+#### Или установите Jetstream с помощью Inertia
 
 ```
 php artisan jetstream:install inertia --teams
 ```
 
-### Install Jetstrap
+### Установите Jetstrap
 
-Use Composer to install Jetstream into your new Laravel project as dev dependency:
+Используйте Composer для установки Jetstream в ваш новый проект Laravel в качестве зависимости разработчика:
 
 ```
 composer require nascent-africa/jetstrap --dev
 ```
 
-Regardless how you install Jetstream, Jetstrap commands are very similar to that
-of Jetstream as it accepts the name of the stack you would like to swap (livewire or inertia).
+Независимо от того, как вы устанавливаете Jetstream, команды Jetstrap очень похожи на команды Jetstream, поскольку они принимают имя стека, который вы хотите поменять местами (livewire или inertia).
 
-> It is important you install and configure [Laravel Jetstream](https://github.com/laravel/jetstream) before performing a swap.
+> Перед выполнением смены важно установить и настроить [Laravel Jetstream](https://github.com/laravel/jetstream).
 
-You are highly encouraged to read through the entire documentation of [Jetstream](https://jetstream.laravel.com/1.x/introduction.html)
-before beginning your Jetstrap project. In addition, you may use the `--teams` switch to swap team assets just like you would in Jetstream:
+Мы настоятельно рекомендуем вам прочитать всю документацию [Jetstream](https://jetstream.getlaravel.ru/2.x/introduction.html) перед тем, как начать свой проект Jetstrap. Кроме того, вы можете использовать переключатель `--teams` для обмена ассетами команды точно так же, как в Jetstream:
 
 ```bash
 
 php artisan jetstrap:swap livewire
 
-or
+или
 
 php artisan jetstrap:swap livewire --teams
 
 php artisan jetstrap:swap inertia --teams
 ```
 
-This will publish overrides to enable Bootstrap like the good old days!
+Это опубликует переопределения для включения Bootstrap, как в старые добрые времена!
 
-### Finalizing The Installation
+### Завершение установки
 
-After installing Jetsrtap and swapping Jetstream resources, remove tailwindCSS and its dependencies if any from your package.json and then install and build your NPM dependencies and migrate your database:
+После установки Jetsrtap и замены ресурсов Jetstream удалите tailwindCSS и его зависимости, если они есть, из вашего package.json, а затем установите и создайте зависимости NPM и перенесите свою базу данных:
 
 ```
 npm install && npm run dev
@@ -91,12 +88,11 @@ npm install && npm run dev
 php artisan migrate
 ```
 
+### Дополнительно
 
-### Extras
+#### Пагинация
 
-#### Pagination
-
-It is also important to point out that Laravel 8 still includes pagination views built using Bootstrap CSS. To use these views instead of the default Tailwind views, you may call the paginator's useBootstrap method within your AppServiceProvider:
+Также важно отметить, что Laravel 8 по-прежнему включает представления разбивки на страницы, созданные с использованием Bootstrap CSS. Чтобы использовать эти представления вместо представлений Tailwind по умолчанию, вы можете вызвать метод `useBootstrap` пагинатора в вашем `AppServiceProvider`:
 
 ```php
 <?php
@@ -109,7 +105,7 @@ use Illuminate\Pagination\Paginator;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Зарегистрируйте любые сервисы приложения.
      *
      * @return void
      */
@@ -119,7 +115,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Загрузите любые сервисы приложений.
      *
      * @return void
      */
@@ -130,23 +126,21 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
+## Предустановки
 
-## Presets
+Пресеты - это настраиваемые сторонние шаблоны, созданные с использованием начальной загрузки. Мы подумали, каковы шансы, что вы собираетесь использовать шаблон по умолчанию, предоставленный Laravel или Laravel Jetstream.
 
-Presets are custom third party templates built using bootstrap. We've thought about it, what are the chances that you're going to use the default template provided by Laravel or Laravel Jetstream.
+Исходя из предположения, что вы уже знаете, какой путь вы хотите пойти перед запуском любого типа каркаса, поэтому, если вы хотите использовать предустановки CoreUi или AdminLte, выбор должен быть указан в вашем сервис-провайдере (`JetstrapFacade::useCoreUi3()` или `JetstrapFacade::useAdminLte3()`) при первом запуске любой команды `swap`.
 
-With the assumption you already know which way you want to go before running any type of scaffolding, so if you want to use CoreUi or AdminLte presets then the choice should be specified in your service provider (`JetstrapFacade::useCoreUi3()` or `JetstrapFacade::useAdminLte3()`) the first time you run any `swap` command.
-
-And if you change your mind after you've run a swap command and decide to use a preset, then run the `jetstrap:swap` command again.
-
+И если вы передумали после того, как запустили команду swap и решили использовать предустановку, то запустите команду `jetstrap:swap` еще раз.
 
 ### Core Ui
 
-[Core Ui](https://coreui.io/) lets you save thousands of priceless hours because it offers everything you need to create modern, beautiful, and responsive applications as stated on their website.
+[Core Ui](https://coreui.io/) позволяет сэкономить тысячи бесценных часов, поскольку предлагает все необходимое для создания современных, красивых и отзывчивых приложений, как указано на их веб-сайте.
 
-> Please visit the CoreUI [documentation](https://coreui.io/docs/getting-started/introduction/) for more details on how to use it.
+> Посетите [документацию](https://coreui.io/docs/getting-started/introduction/) для получения дополнительных сведений о том, как его использовать.
 
-To use Core Ui presets, simply call the `useCoreUi3` method within your AppServiceProvider:
+Чтобы использовать пресеты Core Ui, просто вызовите метод `useCoreUi3` в своем `AppServiceProvider`:
 
 ```php
 <?php
@@ -159,7 +153,7 @@ use NascentAfrica\Jetstrap\JetstrapFacade;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Зарегистрируйте любые сервисы приложения.
      *
      * @return void
      */
@@ -169,7 +163,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Загрузите любые сервисы приложений.
      *
      * @return void
      */
@@ -182,11 +176,11 @@ class AppServiceProvider extends ServiceProvider
 
 ### AdminLTE
 
-[AdminLTE](https://adminlte.io/) is an open source admin dashboard & control panel theme. Built on top of Bootstrap, AdminLTE provides a range of responsive, reusable, and commonly used components.
+[AdminLTE](https://adminlte.io/) - тема панели управления и панели управления с открытым исходным кодом. AdminLTE, построенный на основе Bootstrap, предоставляет ряд адаптивных, многоразовых и часто используемых компонентов.
 
-> Please visit the AdminLTE [documentation](https://adminlte.io/themes/v3/) for more details on how to use it.
+> Посетите [документацию](https://adminlte.io/themes/v3/) AdminLTE для получения дополнительных сведений о том, как его использовать.
 
-To use AdminLte presets, simply call the `useAdminLte3` method within your AppServiceProvider:
+Чтобы использовать пресеты AdminLte, просто вызовите метод `useAdminLte3` в своем `AppServiceProvider`:
 
 ```php
 <?php
@@ -199,7 +193,7 @@ use NascentAfrica\Jetstrap\JetstrapFacade;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Зарегистрируйте любые сервисы приложения.
      *
      * @return void
      */
@@ -209,7 +203,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * Загрузите любые сервисы приложений.
      *
      * @return void
      */
@@ -220,61 +214,60 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-
 ## Breeze
 
-According to the documentation, "Breeze provides a minimal and simple starting point for building a Laravel application with authentication.", but personally I'd like to think of it as Laravel Ui without Vue and Bootstrap.
-Recently I worked on a project that didn't use Vue or require a complex authentication system, so Breeze seemed like a good idea, but again I was faced with the TailwindCSS problem, so I figured why not include it to the Jetstrap package.
+Согласно документации, "Breeze обеспечивает минимальную и простую отправную точку для создания приложения Laravel с аутентификацией.", но лично я бы хотел думать о нем как о Laravel Ui без Vue и Bootstrap.
+
+Недавно я работал над проектом, который не использовал Vue и не требовал сложной системы аутентификации, поэтому Breeze показался мне хорошей идеей, но я снова столкнулся с проблемой TailwindCSS, поэтому я подумал, почему бы не включить его в пакет Jetstrap.
 
 > Before proceeding please familiarize yourself with the Breeze via the official documentation [documentation](https://github.com/laravel/breeze/blob/1.x/README.md).
 
-Again Jetstrap does not affect the Model / Controller portion of Breeze, just the View.
+Опять же, Jetstrap не влияет на часть модели / контроллера Breeze, а только на представление.
 
-### Swapping Breeze resources
+### Замена ресурсов Breeze
 
-To swap tailwind resource for bootstrap in a breeze configured laravel, simply run:
+Чтобы поменять tailwind ресурс yf bootstrap в breeze, настроенном на Laravel, просто запустите:
 
 ```bash
 
 php artisan jetstrap:swap breeze
 ```
 
-### Swapping Breeze inertia resources
+### Замена ресурсов Breeze inertia
 
-Laravel Breeze now comes with stubs for inertia scaffolding and so dose Jetstrap. To use a Bootstrap scaffold for your laravel project running on Breeze alongside inertia, simply run the code below:
+Laravel Breeze теперь поставляется с заглушками для inertia и, таким образом, с Jetstrap. Чтобы использовать каркас Bootstrap для вашего проекта laravel, работающего на Breeze вместе с inertia, просто запустите приведенный ниже код:
 
 ```bash
 
 php artisan jetstrap:swap breeze-inertia
 ```
 
-Next you have to clean up your `package.json` file to make sure we don't install unnecessary packages.
+Затем вам нужно очистить файл `package.json`, чтобы убедиться, что мы не устанавливаем ненужные пакеты.
 
-After that run:
+После этого запустите:
 
 ```
 npm install && npm run dev
 ```
 
-...and you're done!
+...и вы сделали!
 
-Using the `JetstrapFacade::useCoreUi3()` or `JetstrapFacade::useAdminLte3();` in your service provider while swapping breeze assets will work as expected.
+Используйте `JetstrapFacade::useCoreUi3()` или `JetstrapFacade::useAdminLte3();` в вашем сервис-провайдере при замене простых ассетов будет работать должным образом.
 
+## Тестирование
 
-## Testing
-
-Run the tests with:
+Запустите тесты с помощью:
 
 ```bash
 vendor/bin/phpunit
 ```
 
-or 
+или
 
 ```bash
 composer tests
 ```
 
+## Лицензия
 
-## License
-Jetstrap is open-sourced software licensed under the [MIT license](https://github.com/nascent-africa/jetstrap/blob/master/LICENSE).
+Jetstrap - это программное обеспечение с открытым исходным кодом, лицензируемое по [MIT лицензии](https://github.com/nascent-africa/jetstrap/blob/master/LICENSE).
